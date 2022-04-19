@@ -6,11 +6,11 @@ If you wish to analyze & publish using the codes, please cite the following pape
 <br><br>
 Branger F, McMillan HK. (2020). Deriving hydrological signatures from soil moisture data. Hydrological processes 34 (6): 1410–1427 DOI: https://doi.org/10.1002/hyp.13645
 <br><br>
-<b>Modified Branger & McMillan (2020)'s signatures and developed Matlab codes</b>
+<b>Developed Matlab codes based on Branger & McMillan (2020)</b>
 <br><br>
 Araki, R., Branger, F., Wiekenkamp, I., & McMillan, H. (2022). A signature-based approach to quantify soil moisture dynamics under contrasting land-uses. Hydrological Processes 36 (4) e14553. DOI: https://doi.org/10.1002/hyp.14553
 <br><br>
-<b>Developed streamflow Matlab signature codes (applied to soil moisture signature codes)</b>
+<b>Developed streamflow Matlab signature codes, which are applied to the event-based soil moisture signature codes</b>
 <br><br>
 Gnann, S.J., Coxon, G., Woods, R.A., Howden, N.J.K., McMillan H.K., 2021. TOSSH: A Toolbox for Streamflow Signatures in Hydrology. Environmental Modelling & Software. DOI: https://doi.org/10.1016/j.envsoft.2021.104983
 <br><br>
