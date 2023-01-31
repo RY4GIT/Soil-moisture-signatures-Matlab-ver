@@ -37,3 +37,21 @@ An example dataset is in [4_data_after_qc](https://github.com/RY4GIT/Soil-moistu
 - [Optional] Station quality flag
     - You don't need this if you are only interested in the signature functions, not the main script. 
     - The flags helps skip some sensors that you would want to skip. Basically, the flag 100 means good data, and the flag 101 means bad data to skip. Organized by the sensor stations(row) x the sensor depths(column) per a soil moisture sensor network.
+    
+
+## List of signatures
+| Signature                 | Unit                      | Corresponding function    | Output abbreviation   | Description |
+| -------------             | -------------         | -------------             | -------------             | ------------- |
+| Normalized amplitude      | [-]                       | sig_event.m               | amplitude             | Event amplitude was calculated as the difference between the soil moisture values at their maximum and at the start of the event, normalized using estimated field capacity and wilting point at the station  |
+| Rising time               | [hour]                    | sig_event.m               | risingtime            | For each event, event rising time was calculated as the time-lag from the start of an event to the soil moisture peak  |
+| No-response rate          | [-]                       | sig_event.m               | noresrate             | No-response rate was calculated as the number of events with no response divided by the number of all events  |
+| Rising limb density       | [1/timestep]              | sig_RLD.m                 | RLD                   | Rising limb density was calculated as the inverse of the average rising time of all events |
+| Response type             | [sequential/non-sequential/no response]               | sig_restype.m             | restype               | Response type was classified as ‘sequential’ when the response order was sequential from the shallow to the deeper sensor; as ‘non-sequential’ when the order of response times is non-sequential for at least one sensor; ‘No-response’ was assigned when none of the sensors responded |
+| Duration of seasonal transition (dry to wet season)       | [days]            | sig_seasontrans_ForestFlow.m  | duration_dry2wet_p    | Seasonal transition signatures were calculated by fitting a piecewise linear model to the soil moisture timeseries for each wet-to-dry and dry-to-wet transition period. Transition duration was defined as the length of time between the start and the end day |
+| Start date of seasonal transition (dry to wet season)     | [day of the year] | sig_seasontrans_ForestFlow.m  | sdate_dry2wet_p       | The start and end days of the transition were defined as the inflection points of the piecewise linear model, expressed in the day of the year.  |
+| End date of seasonal transition (dry to wet season)       | [day of the year] | sig_seasontrans_ForestFlow.m  | edate_dry2wet_p       | Same as above  |
+| Estimated field capacity  | [m3/m3]               | sig_fcwp.m                | fc                    | We calculated the estimated field capacity and wilting point as the peaks of the soil moisture PDF. First, peaks of the soil moisture PDF were detected. The peak with the largest volumetric soil moisture content was defined as the estimated field capacity |
+| Estiamted wilting point   | [m3/m3]               | sig_fcwp.m                | wp                    |  The peak with the smallest volumetric soil moisture content was defined as the estimated wilting point |
+| Distribution type         | [uni/bi/multi-modal]  | sig_pdf.m                 | disttype              | Soil moisture PDFs were classified according to the number of peaks into ‘unimodal’ (one peak), ‘bimodal’ (two peaks), or ‘multimodal’ (three or more peaks) |
+
+![alt text](./readme/signature_schematics.png)
