@@ -54,4 +54,4 @@ An example dataset is in [4_data_after_qc](https://github.com/RY4GIT/Soil-moistu
 | Estiamted wilting point   | [m3/m3]               | sig_fcwp.m                | wp                    |  The peak with the smallest volumetric soil moisture content was defined as the estimated wilting point |
 | Distribution type         | [uni/bi/multi-modal]  | sig_pdf.m                 | disttype              | Soil moisture PDFs were classified according to the number of peaks into ‘unimodal’ (one peak), ‘bimodal’ (two peaks), or ‘multimodal’ (three or more peaks) |
 
-![alt text](./readme/signature_schematics.png)
+![alt text](https://github.com/RY4GIT/SMSigxForestFlow/blob/master/readme/signature_schematics.png?raw=true)
